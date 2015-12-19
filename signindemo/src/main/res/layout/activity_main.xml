@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#71A7C7"
+    android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bk"/>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/toolbar">
+    <ImageView
+        android:id="@+id/logoIv"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/logo"
+        android:layout_gravity="center"/>
+
+    <TextView android:layout_below="@id/logoIv"
+
+        android:text="登 录"
+        android:layout_marginTop="30dp"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:id="@+id/loginTitle"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <FrameLayout
+        android:layout_below="@id/loginTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/loginFragment" />
+    </LinearLayout>
+</RelativeLayout>

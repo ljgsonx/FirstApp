@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="show" >
+        <item>初中及以下</item>
+        <item>高中</item>
+        <item>大学</item>
+        <item>研究生及以上</item>
+    </string-array>
+
+    <string-array name="show2" >
+        <item>与防护</item>
+        <item>新东方</item>
+        <item>包头市</item>
+        <item>许多地方</item>
+    </string-array>
+
+</resources>

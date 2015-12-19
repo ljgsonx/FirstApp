@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.administrator.alldemos">
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+
+    <permission android:name="com.example.administrator.alldemos.userprovider.AGREE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask">
+        </activity>
+        <activity android:name=".GuideActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.Activity1" />
+        <activity android:name=".activities.Activity2" />
+        <activity android:name=".activities.Activity3" />
+        <activity android:name=".activities.Activity4" />
+        <activity android:name=".activities.Activity5" />
+        <activity android:name=".activities.Activity6" />
+        <activity android:name=".activities.Activity7" />
+        <activity android:name=".activities.Activity8" />
+        <activity android:name=".activities.Activity9" />
+        <activity android:name=".activities.Activity10" />
+        <activity android:name=".activities.Activity11" />
+        <activity android:name=".activities.Activity12" />
+        <activity android:name=".activities.Activity13" />
+        <activity
+            android:name=".activities.Activity14"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".activities.Activity15" />
+        <activity android:name=".activities.Activity16" />
+        <activity android:name=".activities.Activity17" />
+        <activity android:name=".activities.Activity18" />
+        <activity android:name=".activities.Activity19" />
+        <activity android:name=".activities.Activity20" />
+        <activity
+            android:name=".activities.Activity21"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".activities.Activity22" />
+        <activity android:name=".activities.Activity23" />
+
+        <provider
+            android:name=".utils.UserProvider"
+            android:authorities="com.example.administrator.alldemos.userprovider"
+            android:exported="true"
+            android:permission="com.example.administrator.alldemos.userprovider.AGREE" />
+
+        <receiver android:name=".utils.MyAppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/my_app_widget_provider_info" />
+        </receiver>
+
+        <receiver android:name=".utils.TheNewWidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/thenewwidget_provider_info" />
+        </receiver>
+    </application>
+
+</manifest>

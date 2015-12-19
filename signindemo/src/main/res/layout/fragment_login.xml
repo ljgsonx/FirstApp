@@ -1,0 +1,58 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.signindemo.LoginFragment"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+        <TextView android:id="@+id/userNameTv"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:textSize="20sp"
+            android:text="用户名:" />
+        <EditText android:id="@+id/userNameEt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:hint="input your userName..."
+            android:gravity="left"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+        <TextView android:id="@+id/userPwdTv"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:textSize="20sp"
+            android:text="密码:" />
+        <EditText android:id="@+id/userPwdEt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:hint="input your userPwd..."
+            android:gravity="left"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_btn"
+        android:text="Login in"
+        android:textColor="#409FFF"
+        android:textSize="30sp"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A88E0D"
+        android:shadowRadius="15"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"/>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants">
+    <TextView
+        android:id="@+id/userInfoTest1"
+        android:layout_width="0sp"
+        android:layout_height="25sp"
+        android:layout_weight="0.4"
+        android:text="1"/>
+    <TextView
+        android:id="@+id/userInfoTest2"
+        android:layout_width="0sp"
+        android:layout_height="25sp"
+        android:layout_weight="0.4"
+        android:text="2"/>
+    <CheckBox
+        android:id="@+id/userInfoTCheckBox"
+        android:layout_width="0sp"
+        android:layout_height="25sp"
+        android:layout_weight="0.2"/>
+
+</LinearLayout>
