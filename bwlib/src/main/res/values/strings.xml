@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BwBaseLib</string>
+    <string name="company_name" >百望股份</string>
+    <string name="company_name_en">Bai Wang</string>
 </resources>

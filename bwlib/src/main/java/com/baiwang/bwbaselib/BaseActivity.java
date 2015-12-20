@@ -25,15 +25,10 @@ public class BaseActivity extends AppCompatActivity {
     public void setContentView(int layoutResID) {
 
         mToolBarHelper = new ToolBarHelper(this,layoutResID) ;
-        mToolbar = mToolBarHelper.getToolBar() ;
-        mToolbar.setTitle("百望");
-        setSupportActionBar(mToolbar);
         setContentView(mToolBarHelper.getContentView());
 
-        /*把 toolbar 设置到Activity 中*/
-        setSupportActionBar(mToolbar);
-        /*自定义的一些操作*/
-        onCreateCustomToolBar(mToolbar);
+        /*开始自定义toolbar*/
+        onCreateCustomToolBar();
 
         //沉浸式状态栏
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -44,8 +39,18 @@ public class BaseActivity extends AppCompatActivity {
         tintManager.setStatusBarTintResource(R.color.colorPrimary);
     }
 
-    public void onCreateCustomToolBar(Toolbar toolbar){
-        toolbar.setContentInsetsRelative(0, 0);
+    public void onCreateCustomToolBar(){
+        mToolbar = mToolBarHelper.getToolBar() ;
+        mToolbar.setTitle("");
+        //mToolbar.setLogo(R.drawable.logo);
+        //mToolbar.setContentInsetsRelative(50, 0);
+
+        /*把 toolbar 设置到Activity 中*/
+        setSupportActionBar(mToolbar);
+
+        //必须在setSupportActionBar之后设置,也可以在toolbar xml中设置app:navigationIcon,同时自定义图标
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

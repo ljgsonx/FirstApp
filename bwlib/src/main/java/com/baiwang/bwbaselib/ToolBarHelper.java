@@ -1,6 +1,7 @@
 package com.baiwang.bwbaselib;
 
 import android.content.Context;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,10 +36,16 @@ public class ToolBarHelper {
     }
 
     private void initContentView() {
-        mContentView = mInflater.inflate(R.layout.activity_base, null);
+      //  mContentView = mInflater.inflate(R.layout.activity_base, null);
+        mContentView = mInflater.inflate(R.layout.activity_base_collapse, null);
     }
 
     private void initToolBar() {
+        //取消CollapsingToolbarLayout的title,否则占空间
+        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) mContentView.findViewById(R.id.collapsingToolbarLayout);
+        if(null != collapsingToolbarLayout)
+            collapsingToolbarLayout.setTitleEnabled(false);
+
         mToolBar = (Toolbar) mContentView.findViewById(R.id.toolbar);
     }
 

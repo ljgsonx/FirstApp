@@ -25,7 +25,7 @@ public class MyLoader extends AsyncTaskLoader<Cursor>{
 
     private MyLoaderObserver mMyLoaderObserver;
 
-    public MyLoader(Context context,int loaderType) {
+    public  MyLoader(Context context,int loaderType) {
         super(context);
         mLoaderType = loaderType;
     }
