@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 
-import com.example.administrator.alldemos.activities.Activity2;
 import com.example.administrator.alldemos.activities.Activity22;
 
 /**
@@ -66,7 +65,7 @@ public class GuideActivity extends AppCompatActivity {
 
         // 判断程序与第几次运行，如果是第一次运行则跳转到引导界面，否则跳转到主界面
         if (!isFirstIn) {
-            // 使用Handler的postDelayed方法，3秒后执行跳转到MainActivity
+            // 使用Handler的postDelayed方法，3秒后执行跳转到HomeActivity
             mHandler.sendEmptyMessageDelayed(GO_HOME, SPLASH_DELAY_MILLIS);
         } else {
             mHandler.sendEmptyMessageDelayed(GO_GUIDE, SPLASH_DELAY_MILLIS);
@@ -75,7 +74,7 @@ public class GuideActivity extends AppCompatActivity {
     }
 
     private void goHome() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         this.startActivity(intent);
         this.finish();
     }

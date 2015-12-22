@@ -107,4 +107,5 @@ public class Activity22 extends AppCompatActivity implements ViewPager.OnPageCha
         // 设置底部小点选中状态
         setCurrentDot(arg0);
     }
+
 }

@@ -13,22 +13,30 @@
 
     <permission android:name="com.example.administrator.alldemos.userprovider.AGREE" />
 
+    <!--android:hardwareAccelerated禁用硬件加速功能,使其播放gif-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:hardwareAccelerated="false"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:launchMode="singleTask">
-        </activity>
+
+        <activity android:name=".HomeActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".Demos1"
+            android:launchMode="singleTask" />
+        <activity android:name=".Demos2"
+            android:launchMode="singleTask"/>
+
         <activity android:name=".GuideActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--demos 1-->
         <activity android:name=".activities.Activity1" />
         <activity android:name=".activities.Activity2" />
         <activity android:name=".activities.Activity3" />
@@ -44,7 +52,7 @@
         <activity android:name=".activities.Activity13" />
         <activity
             android:name=".activities.Activity14"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".Demos1" />
         <activity android:name=".activities.Activity15" />
         <activity android:name=".activities.Activity16" />
         <activity android:name=".activities.Activity17" />
@@ -80,6 +88,10 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/thenewwidget_provider_info" />
         </receiver>
+
+        <!--demos 2-->
+        <activity android:name=".activities_demo2.Activity1_d2" />
+
     </application>
 
 </manifest>

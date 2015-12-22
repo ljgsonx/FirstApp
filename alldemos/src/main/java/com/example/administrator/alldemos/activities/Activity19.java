@@ -6,9 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.example.administrator.alldemos.MainActivity;
+import com.example.administrator.alldemos.Demos1;
 import com.example.administrator.alldemos.R;
 
 /**
@@ -48,7 +47,7 @@ public class Activity19 extends AppCompatActivity {
                 _intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, getString(R.string.app_name));
                 _intent.putExtra("duplicate", false);
                 _intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(Activity19.this, R.drawable.bmp2));
-                _intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, new Intent(Activity19.this,MainActivity.class).setAction(ACTION_START_SHORTCUT));
+                _intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, new Intent(Activity19.this,Demos1.class).setAction(ACTION_START_SHORTCUT));
                 sendBroadcast(_intent);
             }
         });
@@ -57,7 +56,7 @@ public class Activity19 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent _intent = new Intent("com.android.launcher.action.UNINSTALL_SHORTCUT");
                 _intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, getString(R.string.app_name));
-                _intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, new Intent(Activity19.this,MainActivity.class).setAction(ACTION_START_SHORTCUT));
+                _intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, new Intent(Activity19.this,Demos1.class).setAction(ACTION_START_SHORTCUT));
                 sendBroadcast(_intent);
             }
         });

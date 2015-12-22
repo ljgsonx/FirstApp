@@ -32,7 +32,7 @@ import com.example.administrator.alldemos.activities.Activity7;
 import com.example.administrator.alldemos.activities.Activity8;
 import com.example.administrator.alldemos.activities.Activity9;
 
-public class MainActivity extends AppCompatActivity {
+public class Demos1 extends AppCompatActivity {
 
     private ListView listView;
     private String[] demos=new String[]{
@@ -75,73 +75,73 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        startActivity(new Intent(MainActivity.this, Activity1.class));
+                        startActivity(new Intent(Demos1.this, Activity1.class));
                         break;
                     case 1:
-                        startActivity(new Intent(MainActivity.this, Activity2.class));
+                        startActivity(new Intent(Demos1.this, Activity2.class));
                         break;
                     case 2:
-                        startActivity(new Intent(MainActivity.this, Activity3.class));
+                        startActivity(new Intent(Demos1.this, Activity3.class));
                         break;
                     case 3:
-                        startActivity(new Intent(MainActivity.this, Activity4.class));
+                        startActivity(new Intent(Demos1.this, Activity4.class));
                         break;
                     case 4:
-                        startActivity(new Intent(MainActivity.this, Activity5.class));
+                        startActivity(new Intent(Demos1.this, Activity5.class));
                         break;
                     case 5:
-                        startActivity(new Intent(MainActivity.this, Activity6.class));
+                        startActivity(new Intent(Demos1.this, Activity6.class));
                         break;
                     case 6:
-                        startActivity(new Intent(MainActivity.this, Activity7.class));
+                        startActivity(new Intent(Demos1.this, Activity7.class));
                         break;
                     case 7:
-                        startActivity(new Intent(MainActivity.this, Activity8.class));
+                        startActivity(new Intent(Demos1.this, Activity8.class));
                         break;
                     case 8:
-                        startActivity(new Intent(MainActivity.this, Activity9.class));
+                        startActivity(new Intent(Demos1.this, Activity9.class));
                         break;
                     case 9:
-                        startActivity(new Intent(MainActivity.this, Activity10.class));
+                        startActivity(new Intent(Demos1.this, Activity10.class));
                         break;
                     case 10:
-                        startActivity(new Intent(MainActivity.this, Activity11.class));
+                        startActivity(new Intent(Demos1.this, Activity11.class));
                         break;
                     case 11:
-                        startActivity(new Intent(MainActivity.this, Activity12.class));
+                        startActivity(new Intent(Demos1.this, Activity12.class));
                         break;
                     case 12:
-                        startActivity(new Intent(MainActivity.this, Activity13.class));
+                        startActivity(new Intent(Demos1.this, Activity13.class));
                         break;
                     case 13:
-                        startActivity(new Intent(MainActivity.this, Activity14.class));
+                        startActivity(new Intent(Demos1.this, Activity14.class));
                         break;
                     case 14:
-                        startActivity(new Intent(MainActivity.this, Activity15.class));
+                        startActivity(new Intent(Demos1.this, Activity15.class));
                         break;
                     case 15:
-                        startActivity(new Intent(MainActivity.this, Activity16.class));
+                        startActivity(new Intent(Demos1.this, Activity16.class));
                         break;
                     case 16:
-                        startActivity(new Intent(MainActivity.this, Activity17.class));
+                        startActivity(new Intent(Demos1.this, Activity17.class));
                         break;
                     case 17:
-                        startActivity(new Intent(MainActivity.this, Activity18.class));
+                        startActivity(new Intent(Demos1.this, Activity18.class));
                         break;
                     case 18:
-                        startActivity(new Intent(MainActivity.this, Activity19.class));
+                        startActivity(new Intent(Demos1.this, Activity19.class));
                         break;
                     case 19:
-                        startActivity(new Intent(MainActivity.this, Activity20.class));
+                        startActivity(new Intent(Demos1.this, Activity20.class));
                         break;
                     case 20:
-                        startActivity(new Intent(MainActivity.this, Activity21.class));
+                        startActivity(new Intent(Demos1.this, Activity21.class));
                         break;
                     case 21:
-                        startActivity(new Intent(MainActivity.this, Activity22.class));
+                        startActivity(new Intent(Demos1.this, Activity22.class));
                         break;
                     case 22:
-                        startActivity(new Intent(MainActivity.this, Activity23.class));
+                        startActivity(new Intent(Demos1.this, Activity23.class));
                         break;
                     default:
                         break;

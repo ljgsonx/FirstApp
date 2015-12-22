@@ -10,7 +10,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.administrator.alldemos.MainActivity;
+import com.example.administrator.alldemos.HomeActivity;
 import com.example.administrator.alldemos.R;
 
 import java.util.List;
@@ -66,7 +66,6 @@ public class ViewPagerAdapter extends PagerAdapter{
                     // 设置已经引导
                     setGuided();
                     goHome();
-
                 }
 
             });
@@ -76,7 +75,7 @@ public class ViewPagerAdapter extends PagerAdapter{
 
     private void goHome() {
         // 跳转
-        Intent intent = new Intent(activity, MainActivity.class);
+        Intent intent = new Intent(activity, HomeActivity.class);
         activity.startActivity(intent);
         activity.finish();
     }
