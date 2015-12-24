@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 
@@ -86,6 +87,9 @@ public class MyCustomView extends View {
                     // 默认设置为16sp，TypeValue也可以把sp转化为px
                     mTitleTextSize = a.getDimensionPixelSize(attr, (int) TypedValue.applyDimension(
                             TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics()));
+                    Log.i("------>", mTitleTextSize + "");
+                    break;
+                default:
                     break;
             }
         }
@@ -169,10 +173,14 @@ public class MyCustomView extends View {
     @Override
     protected void onDraw(Canvas canvas)
     {
+        mPaint.getTextBounds(mTitleText, 0, mTitleText.length(), mBound);
+        int startX = (getWidth() - mBound.width()) / 2;
+        int startY = (getHeight() + mBound.height()) / 2;
         mPaint.setColor(Color.CYAN);
-        canvas.drawRect(0, 0, getMeasuredWidth(), getMeasuredHeight(), mPaint);
-
+        //画背景
+        canvas.drawRect(0, 0, mBound.width(), mBound.height(), mPaint);
         mPaint.setColor(mTitleTextColor);
-        canvas.drawText(mTitleText, getWidth() / 2 - mBound.width() / 2, getHeight() / 2 + mBound.height() / 2, mPaint);
+        //画文字0
+        canvas.drawText(mTitleText, startX, startY, mPaint);
     }
 }

@@ -7,7 +7,7 @@ import com.example.administrator.alldemos.R;
 
 /**
  * ---------------------------------------------------
- * Description:
+ * Description: 自定义view测试类,包括播放gif的view定义
  * Author: ljgsonx
  * Belong to: com.example.administrator.alldemos.activities_demo2
  * Time: 2015/12/22 14:32

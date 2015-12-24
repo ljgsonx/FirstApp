@@ -9,10 +9,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.administrator.alldemos.activities_demo2.Activity1_d2;
+import com.example.administrator.alldemos.activities_demo2.Activity2_d2;
 
 /**
  * ---------------------------------------------------
- * Description:
+ * Description: 第二批demo
  * Author: ljgsonx
  * Belong to: com.example.administrator.alldemos
  * Time: 2015/12/22 14:29
@@ -22,7 +23,7 @@ public class Demos2 extends AppCompatActivity {
     private ListView listView;
     private String[] demos=new String[]{
             "custom view",
-            " ",
+            "ultra pull to refresh",
             " "
     };
     @Override
@@ -43,6 +44,7 @@ public class Demos2 extends AppCompatActivity {
                         startActivity(new Intent(Demos2.this, Activity1_d2.class));
                         break;
                     case 1:
+                        startActivity(new Intent(Demos2.this, Activity2_d2.class));
                         break;
                     case 2:
                         break;

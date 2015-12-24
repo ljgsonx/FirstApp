@@ -32,6 +32,14 @@ import com.example.administrator.alldemos.activities.Activity7;
 import com.example.administrator.alldemos.activities.Activity8;
 import com.example.administrator.alldemos.activities.Activity9;
 
+/**
+ *---------------------------------------------------
+ * Description: 第一批demo
+ * Author: ljgsonx
+ * Belong to: com.example.administrator.alldemos
+ * Time: 2015/12/24 18:09
+ *---------------------------------------------------
+ */
 public class Demos1 extends AppCompatActivity {
 
     private ListView listView;

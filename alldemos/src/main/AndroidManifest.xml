@@ -91,6 +91,7 @@
 
         <!--demos 2-->
         <activity android:name=".activities_demo2.Activity1_d2" />
+        <activity android:name=".activities_demo2.Activity2_d2" />
 
     </application>
 
