@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         init();
         loginBtn.setOnClickListener(cl);
         loginCancel.setOnClickListener(cl);
+        //fot git test
     }
 
     View.OnClickListener cl = new View.OnClickListener() {
