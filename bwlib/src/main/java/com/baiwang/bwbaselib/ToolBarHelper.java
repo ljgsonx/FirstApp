@@ -36,8 +36,8 @@ public class ToolBarHelper {
     }
 
     private void initContentView() {
-      //  mContentView = mInflater.inflate(R.layout.activity_base, null);
-        mContentView = mInflater.inflate(R.layout.activity_base_collapse, null);
+        mContentView = mInflater.inflate(R.layout.activity_base, null);
+      //  mContentView = mInflater.inflate(R.layout.activity_base_collapse, null);
     }
 
     private void initToolBar() {

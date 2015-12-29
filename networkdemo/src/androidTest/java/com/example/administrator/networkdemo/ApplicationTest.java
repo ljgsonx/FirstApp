@@ -1,7 +1,6 @@
 package com.example.administrator.networkdemo;
 
 import android.app.Application;
-import android.content.Context;
 import android.test.ApplicationTestCase;
 import android.util.Log;
 
@@ -15,8 +14,6 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 
 import org.json.JSONObject;
-
-import java.net.URL;
 
 /**
  *---------------------------------------------------
