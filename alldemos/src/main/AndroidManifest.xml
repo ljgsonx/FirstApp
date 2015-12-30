@@ -108,6 +108,7 @@
         <!--demos 2-->
         <activity android:name=".activities_demo2.Activity1_d2" />
         <activity android:name=".activities_demo2.Activity2_d2" />
+        <activity android:name=".activities_demo2.Activity2_d3" />
 
         <!--parse push-->
         <service android:name="com.parse.PushService" />

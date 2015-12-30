@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:baselineAligned="true">
+
+        <RadioButton
+            android:gravity="start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:drawableTop="@drawable/d2_tb1_seletor"
+            android:background="@drawable/d2_tb_bk_seletor"
+            android:text="电视"
+            android:button="@null"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:drawableTop="@drawable/d2_tb2_seletor"
+            android:background="@drawable/d2_tb_bk_seletor"
+            android:text="手机"
+            android:button="@null"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="耳机"
+            android:drawableTop="@drawable/d2_tb3_seletor"
+            android:background="@drawable/d2_tb_bk_seletor"
+            android:button="@null"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="画笔"
+            android:drawableTop="@drawable/d2_tb4_seletor"
+            android:background="@drawable/d2_tb_bk_seletor"
+            android:button="@null"/>
+    </RadioGroup>
+
+</LinearLayout>
