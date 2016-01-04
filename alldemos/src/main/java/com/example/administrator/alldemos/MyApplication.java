@@ -2,6 +2,7 @@ package com.example.administrator.alldemos;
 
 import android.app.Application;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.parse.Parse;
 import com.parse.ParseInstallation;
 import com.parse.ParsePush;
@@ -25,5 +26,7 @@ public class MyApplication extends Application {
         Parse.initialize(this, APPLICATION_ID, CLIENT_KEY);
         ParseInstallation.getCurrentInstallation().saveInBackground();
         ParsePush.subscribeInBackground("thechannel");
+
+        SDKInitializer.initialize(getApplicationContext());
     }
 }

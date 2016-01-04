@@ -10,7 +10,8 @@ import android.widget.ListView;
 
 import com.example.administrator.alldemos.activities_demo2.Activity1_d2;
 import com.example.administrator.alldemos.activities_demo2.Activity2_d2;
-import com.example.administrator.alldemos.activities_demo2.Activity2_d3;
+import com.example.administrator.alldemos.activities_demo2.Activity3_d2;
+import com.example.administrator.alldemos.activities_demo2.Activity4_d2;
 
 /**
  * ---------------------------------------------------
@@ -25,7 +26,8 @@ public class Demos2 extends AppCompatActivity {
     private String[] demos=new String[]{
             "custom view",
             "ultra pull to refresh",
-            "footer test"
+            "footer test",
+            "baidumap test"
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,10 @@ public class Demos2 extends AppCompatActivity {
                         startActivity(new Intent(Demos2.this, Activity2_d2.class));
                         break;
                     case 2:
-                        startActivity(new Intent(Demos2.this, Activity2_d3.class));
+                        startActivity(new Intent(Demos2.this, Activity3_d2.class));
+                        break;
+                    case 3:
+                        startActivity(new Intent(Demos2.this, Activity4_d2.class));
                         break;
                     default:
                         break;
