@@ -7,6 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+/**
+ *---------------------------------------------------
+ * Description: 初始化contentview 及 toolbar的helper类
+ * Author: ljgsonx
+ * Belong to: com.baiwang.bwbaselib
+ * Time: 2016/1/5 18:20
+ *---------------------------------------------------
+ */
 public class ToolBarHelper {
 
     /*上下文，创建view的时候需要用到*/
@@ -24,9 +32,19 @@ public class ToolBarHelper {
     /*视图构造器*/
     private LayoutInflater mInflater;
 
+    /*toolbar是否可拉伸*/
+    private boolean isCollapsing = false;
+
+    /*自定义layout*/
+    private int mLayoutId;
+
     public ToolBarHelper(Context context, int layoutId) {
         this.mContext = context;
-        mInflater = LayoutInflater.from(mContext);
+        this.mInflater = LayoutInflater.from(mContext);
+        this.mLayoutId = layoutId;
+    }
+
+    private void initAll(int layoutId){
         /*初始化整个内容*/
         initContentView();
         /*初始化toolbar*/
@@ -36,8 +54,8 @@ public class ToolBarHelper {
     }
 
     private void initContentView() {
-        mContentView = mInflater.inflate(R.layout.activity_base, null);
-      //  mContentView = mInflater.inflate(R.layout.activity_base_collapse, null);
+        mContentView = isCollapsing?mInflater.inflate(R.layout.activity_base_collapse, null)
+                :mInflater.inflate(R.layout.activity_base, null);
     }
 
     private void initToolBar() {
@@ -55,7 +73,25 @@ public class ToolBarHelper {
         mUserView = mInflater.inflate(id, userRootView);
     }
 
+    /**
+     * Description: 设置是否toolbar可伸展
+     * Author: ljgsonx
+     * Time: 2016/1/5 18:17
+     */
+    public void setCollapsingToolbar(boolean isCollapsing){
+        this.isCollapsing = isCollapsing;
+        initAll(mLayoutId);
+    }
+
+    /**
+     * Description: 获取contentview,自定义layout已被加入其中
+     * Author: ljgsonx
+     * Time: 2016/1/5 18:19
+     */
     public View getContentView() {
+        if(null == mContentView){
+            initAll(mLayoutId);
+        }
         return mContentView;
     }
 

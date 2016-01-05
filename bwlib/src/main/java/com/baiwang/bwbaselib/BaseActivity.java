@@ -11,10 +11,21 @@ import android.view.WindowManager;
 
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
+/**
+ *---------------------------------------------------
+ * Description: 封装了toolbar的base Activity
+ * Author: ljgsonx
+ * Belong to: com.baiwang.bwbaselib
+ * Time: 2016/1/5 18:48
+ *---------------------------------------------------
+ */
 public class BaseActivity extends AppCompatActivity {
 
     private ToolBarHelper mToolBarHelper;
     private Toolbar mToolbar;
+    private boolean isCollapsing = false;
+
+    private int mLayoutResID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +34,14 @@ public class BaseActivity extends AppCompatActivity {
 
     @Override
     public void setContentView(int layoutResID) {
+        this.mLayoutResID = layoutResID;
+        initAll();
+    }
 
-        mToolBarHelper = new ToolBarHelper(this,layoutResID) ;
+    private void initAll(){
+        if(null == mToolBarHelper)
+            mToolBarHelper = new ToolBarHelper(this,mLayoutResID);
+        mToolBarHelper.setCollapsingToolbar(isCollapsing);
         setContentView(mToolBarHelper.getContentView());
 
         /*开始自定义toolbar*/
@@ -39,8 +56,23 @@ public class BaseActivity extends AppCompatActivity {
         tintManager.setStatusBarTintResource(R.color.colorPrimary);
     }
 
+    /**
+     * Description: 设置toolbar是否可伸展
+     * Author: ljgsonx
+     * Time: 2016/1/5 18:41
+     */
+    public void setCollapsingToolbar(boolean isCollapsing){
+        this.isCollapsing = isCollapsing;
+        initAll();
+    }
+
+    /**
+     * Description: 自定义toolbar
+     * Author: ljgsonx
+     * Time: 2016/1/5 18:41
+     */
     public void onCreateCustomToolBar(){
-        mToolbar = mToolBarHelper.getToolBar() ;
+        mToolbar = mToolBarHelper.getToolBar();
         mToolbar.setTitle("");
         //mToolbar.setLogo(R.drawable.logo);
         //mToolbar.setContentInsetsRelative(50, 0);
