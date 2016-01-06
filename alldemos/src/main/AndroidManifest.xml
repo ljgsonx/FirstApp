@@ -139,6 +139,7 @@
         <activity android:name=".activities_demo2.Activity2_d2" />
         <activity android:name=".activities_demo2.Activity3_d2" />
         <activity android:name=".activities_demo2.Activity4_d2" />
+        <activity android:name=".activities_demo2.Activity5_d2" />
 
         <!--baidu 定位service-->
         <service android:name="com.baidu.location.f"

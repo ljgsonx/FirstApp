@@ -12,6 +12,7 @@ import com.example.administrator.alldemos.activities_demo2.Activity1_d2;
 import com.example.administrator.alldemos.activities_demo2.Activity2_d2;
 import com.example.administrator.alldemos.activities_demo2.Activity3_d2;
 import com.example.administrator.alldemos.activities_demo2.Activity4_d2;
+import com.example.administrator.alldemos.activities_demo2.Activity5_d2;
 
 /**
  * ---------------------------------------------------
@@ -27,7 +28,9 @@ public class Demos2 extends AppCompatActivity {
             "custom view",
             "ultra pull to refresh",
             "footer test",
-            "baidumap test"
+            "baidumap test",
+            "StaggeredGridLayoutManager Test"
+
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,9 @@ public class Demos2 extends AppCompatActivity {
                         break;
                     case 3:
                         startActivity(new Intent(Demos2.this, Activity4_d2.class));
+                        break;
+                    case 4:
+                        startActivity(new Intent(Demos2.this, Activity5_d2.class));
                         break;
                     default:
                         break;

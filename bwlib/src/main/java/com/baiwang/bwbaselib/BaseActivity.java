@@ -53,7 +53,7 @@ public class BaseActivity extends AppCompatActivity {
         }
         SystemBarTintManager tintManager = new SystemBarTintManager(this);
         tintManager.setStatusBarTintEnabled(true);
-        tintManager.setStatusBarTintResource(R.color.colorPrimary);
+        tintManager.setStatusBarTintDrawable(mToolBarHelper.getToolBar().getBackground());
     }
 
     /**
