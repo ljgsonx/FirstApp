@@ -145,7 +145,7 @@ public class MyCustomView extends View {
         int specSize = MeasureSpec.getSize(widthMeasureSpec);
         switch (specMode)
         {
-            case MeasureSpec.EXACTLY:// 明确指定了
+            case MeasureSpec.EXACTLY:// 明确指定了大小或设成match_parent
                 width = getPaddingLeft() + getPaddingRight() + specSize;
                 break;
             case MeasureSpec.AT_MOST:// 一般为WARP_CONTENT
@@ -168,11 +168,13 @@ public class MyCustomView extends View {
                 break;
         }
         setMeasuredDimension(width, height);
+        System.out.println("--->"+width +" "+height);
     }
 
     @Override
     protected void onDraw(Canvas canvas)
     {
+        System.out.println(getWidth() +"++++++"+getHeight());
         mPaint.getTextBounds(mTitleText, 0, mTitleText.length(), mBound);
         int startX = (getWidth() - mBound.width()) / 2;
         int startY = (getHeight() + mBound.height()) / 2;
