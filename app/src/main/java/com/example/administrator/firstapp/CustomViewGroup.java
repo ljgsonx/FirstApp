@@ -95,12 +95,15 @@ public class CustomViewGroup extends RelativeLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        //不调用父类onTouchEvent,则onClick无法执行,即使可以拿到事件
+        System.out.println(super.onTouchEvent(event));
         if (mViewGroupType == 0) {
             Log.d("ViewGroupA---->","onTouchEvent");
         }else{
             Log.d("ViewGroupB---->","onTouchEvent");
+            return true;
         }
-        return super.onTouchEvent(event);
+        return false;
     }
 
 }
