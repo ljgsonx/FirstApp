@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomViewGroup">
+        <attr name="viewGroupType" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="CustomView">
+        <attr name="viewType" format="integer" />
+    </declare-styleable>
+</resources>
