@@ -5,31 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.example.administrator.firstapp.CustomViewGroup
+    <com.example.administrator.firstapp.custom.CustomViewGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#00ff00">
 
-        <com.example.administrator.firstapp.CustomViewGroup
+        <com.example.administrator.firstapp.custom.CustomViewGroup
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:background="@color/colorAccent"
             custom:viewGroupType="1">
 
-            <com.example.administrator.firstapp.CustomView
+            <com.example.administrator.firstapp.custom.CustomView
                 android:id="@+id/customView1"
                 android:background="@color/colorPrimary"
                 android:layout_width="100dp"
                 android:layout_height="100dp" />
 
-            <com.example.administrator.firstapp.CustomView
+            <com.example.administrator.firstapp.custom.CustomView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:background="@color/colorPrimaryDark"
                 custom:viewType="1"
                 android:layout_below="@id/customView1"/>
 
-        </com.example.administrator.firstapp.CustomViewGroup>
+        </com.example.administrator.firstapp.custom.CustomViewGroup>
 
-    </com.example.administrator.firstapp.CustomViewGroup>
+    </com.example.administrator.firstapp.custom.CustomViewGroup>
 </LinearLayout>

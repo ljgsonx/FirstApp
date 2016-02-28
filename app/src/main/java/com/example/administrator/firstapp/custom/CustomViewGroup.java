@@ -1,4 +1,4 @@
-package com.example.administrator.firstapp;
+package com.example.administrator.firstapp.custom;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,6 +8,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+
+import com.example.administrator.firstapp.R;
 
 /**
  * Created by ljgsonx on 2016/2/26.

@@ -1,4 +1,4 @@
-package com.example.administrator.firstapp;
+package com.example.administrator.firstapp.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,8 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.administrator.firstapp.R;
 
 /**
  * ---------------------------------------------------

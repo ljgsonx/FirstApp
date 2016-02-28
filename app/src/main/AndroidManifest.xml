@@ -14,34 +14,37 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             >
         </activity>
-        <activity android:name=".SecondActivity"
+        <activity android:name=".Activities.SecondActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".ThirdActivity"
+        <activity android:name=".Activities.ThirdActivity"
             android:theme="@style/AppTheme.NoActionBar" >
 
         </activity>
-        <activity android:name=".FourthActivity"
+        <activity android:name=".Activities.FourthActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".FifthActivity"
+        <activity android:name=".Activities.FifthActivity"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".SixthActivity"
+        <activity android:name=".Activities.SixthActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".Activity10">
+        <activity android:name=".Activities.Activity10">
 
         </activity>
-        <activity android:name=".ServiceActivity" >
+        <activity android:name=".Activities.ServiceActivity" >
 
         </activity>
-        <activity android:name=".ViewEventTestActivity">
+        <activity android:name=".Activities.ViewEventTestActivity">
+
+        </activity>
+        <activity android:name=".Activities.NumerPickerTestActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

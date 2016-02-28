@@ -1,4 +1,4 @@
-package com.example.administrator.firstapp;
+package com.example.administrator.firstapp.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.administrator.firstapp.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.example.administrator.firstapp;
+package com.example.administrator.firstapp.custom;
 
 import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
@@ -16,6 +16,9 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import com.example.administrator.firstapp.ItemTest;
+import com.example.administrator.firstapp.R;
 
 import java.util.ArrayList;
 

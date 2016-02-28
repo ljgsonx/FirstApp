@@ -1,4 +1,4 @@
-package com.example.administrator.firstapp;
+package com.example.administrator.firstapp.Activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.Toast;
+
+import com.example.administrator.firstapp.ItemTest;
+import com.example.administrator.firstapp.R;
+import com.example.administrator.firstapp.custom.TestPopwindow2;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.administrator.firstapp;
+package com.example.administrator.firstapp.Activities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.Toast;
+
+import com.example.administrator.firstapp.R;
 
 import java.io.File;
 import java.io.IOException;
