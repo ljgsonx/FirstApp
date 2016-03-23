@@ -22,7 +22,7 @@ public class QNumberPicker extends LinearLayout {
 
     private Context mContext;
     private int mDefaultTextSize = 20;
-    private int mDefaultPadding = 10;
+    private int mDefaultPadding = 0;
 
     private int mLastY;
     private Scroller mScroller;
@@ -69,8 +69,8 @@ public class QNumberPicker extends LinearLayout {
         super.onLayout(changed, l, t, r, b);
         mTvHeight = getChildAt(0).getMeasuredHeight();
         MarginLayoutParams mlp = (MarginLayoutParams) getLayoutParams();
-        mlp.height = mTvHeight * 3;
         setLayoutParams(mlp);
+        mlp.height = mTvHeight * 3 + mlp.topMargin + mlp.bottomMargin;
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             View child = getChildAt(i);

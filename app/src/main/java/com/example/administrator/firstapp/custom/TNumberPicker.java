@@ -20,6 +20,7 @@ public class TNumberPicker extends RelativeLayout {
     private QNumberPicker mQNumberPicker;
     private ImageView iv1;
     private ImageView iv2;
+    private ImageView iv3;
     private int mHeight;
     private int defaultIvHeight = 3;
 
@@ -43,19 +44,25 @@ public class TNumberPicker extends RelativeLayout {
         mQNumberPicker = new QNumberPicker(context);
         iv1 = new ImageView(context);
         iv2 = new ImageView(context);
+        iv3 = new ImageView(context);
         iv1.setBackgroundColor(context.getResources().getColor(R.color.colorAccent));
         iv2.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
+        iv3.setBackgroundColor(context.getResources().getColor(R.color.colorPrimary));
         this.addView(mQNumberPicker);
         this.addView(iv1);
         this.addView(iv2);
+        this.addView(iv3);
     }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
-        mHeight = getChildAt(0).getMeasuredHeight();
-        iv1.layout(l, mHeight / 3 - defaultIvHeight / 2, r, mHeight / 3 + defaultIvHeight / 2);
-        iv2.layout(l, 2 * (mHeight / 3) - defaultIvHeight / 2, r, 2 * (mHeight / 3) + defaultIvHeight / 2);
+        mHeight = b - t;
+        System.out.println("---------");
+        System.out.println(getPaddingLeft() + " " + getPaddingTop() + " " + getPaddingRight() + " " + getPaddingBottom());
+        mQNumberPicker.layout(getPaddingLeft() / 2, getPaddingTop() / 2, getPaddingRight() / 2 + r, getPaddingBottom() / 2 + b);
+        iv1.layout(0, (mHeight / 3) - defaultIvHeight / 2, r, (mHeight / 3) + defaultIvHeight / 2);
+        iv2.layout(0, 2 * (mHeight / 3) - defaultIvHeight / 2, r, 2 * (mHeight / 3) + defaultIvHeight / 2);
     }
 
     public QNumberPicker getQNumberPicker() {
