@@ -50,7 +50,7 @@ public class QNumberPicker extends LinearLayout {
         mDisplayedTvs = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             TextView tv = new TextView(context);
-            tv.setTextSize(DisplayUtil.sp2px(context, mDefaultTextSize));
+            tv.setTextSize(mDefaultTextSize);
             int paddingInPx = DisplayUtil.sp2px(context, mDefaultPadding);
             tv.setPadding(paddingInPx, paddingInPx, paddingInPx, paddingInPx);
             mDisplayedTvs.add(tv);
