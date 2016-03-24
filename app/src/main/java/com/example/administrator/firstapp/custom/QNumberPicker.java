@@ -22,11 +22,12 @@ public class QNumberPicker extends LinearLayout {
 
     private Context mContext;
     private int mDefaultTextSize = 20;
-    private int mDefaultPadding = 0;
+    private int mDefaultPadding = 10;
 
     private int mLastY;
     private Scroller mScroller;
     private ScrollViewAdapter mScrollViewAdapter;
+    private int mIndexOfTargetValue;
 
     private int mTvHeight;
 
@@ -50,9 +51,9 @@ public class QNumberPicker extends LinearLayout {
         mDisplayedTvs = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             TextView tv = new TextView(context);
-            tv.setTextSize(mDefaultTextSize);
             int paddingInPx = DisplayUtil.sp2px(context, mDefaultPadding);
             tv.setPadding(paddingInPx, paddingInPx, paddingInPx, paddingInPx);
+            tv.setTextSize(mDefaultTextSize);
             mDisplayedTvs.add(tv);
             this.addView(tv);
         }
@@ -69,13 +70,13 @@ public class QNumberPicker extends LinearLayout {
         super.onLayout(changed, l, t, r, b);
         mTvHeight = getChildAt(0).getMeasuredHeight();
         MarginLayoutParams mlp = (MarginLayoutParams) getLayoutParams();
+        mlp.height = mTvHeight * 3 + getPaddingBottom() + getPaddingTop() * 3;
         setLayoutParams(mlp);
-        mlp.height = mTvHeight * 3 + mlp.topMargin + mlp.bottomMargin;
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
             if (child.getVisibility() != View.GONE) {
-                child.layout(l, (i - 1) * mTvHeight, r, i * mTvHeight);
+                child.layout(getPaddingLeft(), (i - 1) * mTvHeight + getPaddingTop() * i, r, i * mTvHeight + getPaddingTop() * i);
             }
         }
     }
@@ -92,7 +93,7 @@ public class QNumberPicker extends LinearLayout {
                 if (!mScroller.isFinished()) {
                     mScroller.abortAnimation();
                 }
-                int movedPosition = getScrollY() / mTvHeight;
+                int movedPosition = getScrollY() / (mTvHeight + getPaddingTop());
                 if (movedPosition == -1) {
                     TextView tv = (TextView) this.getChildAt(4);
                     int valueTag = (int) this.getChildAt(0).getTag();
@@ -114,17 +115,17 @@ public class QNumberPicker extends LinearLayout {
                     setAlphaOfTv(getScrollY());
                     //防止移动过大
                     int dy = mLastY - y;
-                    dy = dy % mTvHeight;
+                    dy = dy % (mTvHeight + getPaddingTop());
                     scrollBy(0, dy);
                 }
                 mLastY = y;
                 break;
             case MotionEvent.ACTION_UP:
-                if (Math.abs(getScrollY()) < mTvHeight / 2) {
+                if (Math.abs(getScrollY()) < (mTvHeight + getPaddingTop()) / 2) {
                     mScroller.startScroll(0, getScrollY(), 0, -getScrollY());
-                }else {
+                } else {
                     float hasScrolled = Math.abs(getScrollY());
-                    float needed = mTvHeight - hasScrolled;
+                    float needed = mTvHeight + getPaddingTop() - hasScrolled;
                     needed = getScrollY() < 0 ? -needed : needed;
                     mScroller.startScroll(0, getScrollY(), 0, (int) needed);
                 }
@@ -134,17 +135,17 @@ public class QNumberPicker extends LinearLayout {
         return true;
     }
 
-    private void setAlphaOfTv(int currentY){
-        float scale1 = 0.2f + Math.abs((float) currentY / (mTvHeight)) * 0.8f; //0.2~1
+    private void setAlphaOfTv(int currentY) {
+        float scale1 = 0.2f + Math.abs((float) currentY / (mTvHeight + getPaddingTop())) * 0.8f; //0.2~1
         float scale2 = 1.2f - scale1; //1~0.2
-        float scale3 = 0.2f - Math.abs((float) currentY / (mTvHeight)) * 0.2f; //0.2~0
+        float scale3 = 0.2f - Math.abs((float) currentY / (mTvHeight + getPaddingTop())) * 0.2f; //0.2~0
         float scale4 = 0.2f - scale3;//0~0.2
         if (currentY > 0) {
             this.getChildAt(1).setAlpha(scale3);
             this.getChildAt(2).setAlpha(scale2);
             this.getChildAt(3).setAlpha(scale1);
             this.getChildAt(4).setAlpha(scale4);
-        }else{
+        } else {
             this.getChildAt(0).setAlpha(scale4);
             this.getChildAt(1).setAlpha(scale1);
             this.getChildAt(2).setAlpha(scale2);
@@ -166,36 +167,44 @@ public class QNumberPicker extends LinearLayout {
     public void setDisplayedData(String[] data) {
         mScrollViewAdapter = new ScrollViewAdapter();
         mScrollViewAdapter.setDisplayedData(data);
-        for(int i =0; i < mDisplayedTvs.size(); i++){
-            mDisplayedTvs.get(i).setText(mScrollViewAdapter.getValueOfDisplayedView(i));
-            mDisplayedTvs.get(i).setTag(i);
-        }
+        setValues();
     }
 
-    public void setTextSize(int testSize) {
-        this.mDefaultTextSize = testSize;
+    public void setTextSize(int textSize) {
         for (TextView tv : mDisplayedTvs) {
-            tv.setTextSize(mDefaultTextSize);
+            tv.setTextSize(textSize);
         }
     }
 
-    public void setTextColor(int resId){
+    public void setTextColorByResId(int resId) {
         for (TextView tv : mDisplayedTvs) {
             tv.setTextColor(mContext.getResources().getColor(resId));
         }
     }
 
-    public void setTargetValueByIndex(int index) {
-        if (index < 0 || index > mScrollViewAdapter.getDisplayedData().length-1) {
-            throw new ArrayIndexOutOfBoundsException("please input the correct index!");
+    public void setTextColor(int color) {
+        for (TextView tv : mDisplayedTvs) {
+            tv.setTextColor(color);
         }
-        if (index < 2) {
-            index += mScrollViewAdapter.getDisplayedData().length;
+    }
+
+    public void setValues() {
+        if(mScrollViewAdapter == null) return;
+        if (mIndexOfTargetValue < 0 || mIndexOfTargetValue > mScrollViewAdapter.getDisplayedData().length-1) {
+            throw new ArrayIndexOutOfBoundsException("the index of target value is out of the size of data!");
+        }
+        if (mIndexOfTargetValue < 2) {
+            mIndexOfTargetValue += mScrollViewAdapter.getDisplayedData().length;
         }
         for (int i = 0; i < mDisplayedTvs.size(); i++) {
-            mDisplayedTvs.get(i).setText(mScrollViewAdapter.getValueOfDisplayedView(index - 2 + i));
-            mDisplayedTvs.get(i).setTag(index - 2 + i);
+            mDisplayedTvs.get(i).setText(mScrollViewAdapter.getValueOfDisplayedView(mIndexOfTargetValue - 2 + i));
+            mDisplayedTvs.get(i).setTag(mIndexOfTargetValue - 2 + i);
         }
+    }
+
+    public void setIndexOfTargetValue(int index) {
+        this.mIndexOfTargetValue = index;
+        setValues();
     }
 
     class ScrollViewAdapter{

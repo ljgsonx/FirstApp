@@ -6,4 +6,12 @@
     <declare-styleable name="CustomView">
         <attr name="viewType" format="integer" />
     </declare-styleable>
+    <declare-styleable name="TNumberPicker">
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="reference|color" />
+        <attr name="contentPadding" format="dimension" />
+        <attr name="dividerHeight" format="dimension" />
+        <attr name="dividerColor" format="reference|color" />
+        <attr name="targetValueIndex" format="integer" />
+    </declare-styleable>
 </resources>

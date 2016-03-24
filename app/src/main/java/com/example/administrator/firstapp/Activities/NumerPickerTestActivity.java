@@ -17,9 +17,6 @@ public class NumerPickerTestActivity extends AppCompatActivity {
         setContentView(R.layout.numerpicker_layout);
         TNumberPicker tNumberPicker = (TNumberPicker) findViewById(R.id.TNumberPicker);
         String[] numbers = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-        tNumberPicker.getQNumberPicker().setDisplayedData(numbers);
-        tNumberPicker.getQNumberPicker().setTargetValueByIndex(8);
-        tNumberPicker.getQNumberPicker().setTextColor(R.color.colorAccent);
-        tNumberPicker.getQNumberPicker().setTextSize(30);
+        tNumberPicker.setDisplayedData(numbers);
     }
 }

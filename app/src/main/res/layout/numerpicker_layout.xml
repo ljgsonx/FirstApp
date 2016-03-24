@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -7,10 +8,16 @@
 
     <com.example.administrator.firstapp.custom.TNumberPicker
         android:id="@+id/TNumberPicker"
-        android:layout_margin="50dp"
-        android:padding="10dp"
+        android:layout_margin="30dp"
+        android:padding="20dp"
         android:background="#AFAFAF"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        custom:textSize="30sp"
+        custom:textColor="@color/colorAccent"
+        custom:contentPadding="10dp"
+        custom:dividerColor="#00ff00"
+        custom:dividerHeight="5dp"
+        custom:targetValueIndex="7"/>
 
 </LinearLayout>
